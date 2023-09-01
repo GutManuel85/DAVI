@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>CO2-Design</title>
+    <link rel="stylesheet" type="text/css" href="css/w3.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/loadNavBar.js"></script>
+    <script type="text/javascript" src="./js/loadFooter.js"></script>
+</head>
+
+<body class="background">
+
+<header class="w3-padding-large w3-col s12">
+    <div id="navPlaceholder"></div>
+</header>
+
+<section class="w3-padding-large w3-auto w3-white">
+    <article class="w3-padding-small">
+        <h1 id="design">Design</h1>
+        <h2>Grundlagen Visuelles Design</h2>
+        <p>Bei der Wahl der Visualisierungselemente haben wir uns zum Ziel gesetzt, dass die Visualisierung intuitiv zu
+            verstehen ist und wenig Anleitung benötigt. Da wir den CO2-Ausstoss verschiedener Länder miteinander
+            vergleichen, bot sich eine eingefärbte Weltkarte (Chloropleth Map) an. Das Jahr ist verzögerungsfrei und
+            intuitiv über einen Slider zu regeln. Eine detaillierte Analyse ausgewählter Länder erfolgt dann im
+            multivariaten Bubble-Graph. </p>
+        <h2>Grundprinzipien des analytischen Designs (Tufte)</h2>
+        <h4>1. Prinzip: Vergleiche</h4>
+        <p>Vergleich der Dimensionen CO2/BIP, CO2/Landfläche, CO2/Einwohner, CO2_absolut und CO2_relativ der Länder in
+            Weltkarte.</p>
+        <h4>2. Prinzip: Kausalität, Mechanismus, Struktur, Erklärung</h4>
+        <p>Entwicklungen und Mechanismen lassen sich über das «Spielen» mit dem Slider sowohl in der Karte wie auch im
+            Bubble-Graph gut sehen. Erklärungen siehe <a href="projectInfo.html">hier</a>.</p>
+        <h4>3. Prinzip: Multivariate Analyse</h4>
+        <p>Der Bubble-Graph vereint die Dimensionen: Land, CO2/BIP, CO2/Einwohner, CO2/Landfläche, CO2_absolut pro
+            selektierbares Jahr.</p>
+        <h4>4. Prinzip: Integration von Beweisen</h4>
+        <p>Über den Tooltip werden detaillierte Zahlen und Beschriftungen angezeigt, welche die Visualisierungen
+            untermauern.</p>
+        <h4>5. Prinzip: Dokumentation</h4>
+        <p>Titel sind bewusst gesetzt, Autoren sind genannt und auf Referenzen sowie Datenquellen wird verwiesen.</p>
+        <h4>6. Prinzip: Inhalt zählt am meisten</h4>
+        <p>Im Sinne des Data-Ink-Ratio haben wir und auf die Dateninformationen fokussiert und unnötige Designelemente
+            weggelassen.</p>
+
+        <h2>Data-Ink-Ratio (Tufte)</h2>
+        <p>Gemäss Tufte soll der Data-Ink-Ratio möglichst tief gehalten werden. Bei der Weltkarte illustrieren wir
+            die Dateninformationen mit unterschiedlichen Farben ohne Hintergrundeffekte. Legenden sind minimal
+            beschriftet. Masseinheiten werden nur einmal pro Legende angegeben. Textuelle Infos werden in der Map und im
+            Bubble-Graph keine dargestellt. Detaillierte Informationen sind über den Tooltip mittels Hover erhältlich.
+            Achsen sind minimalistisch beschriftet, wobei auf Gitterlinien verzichtet wird.
+        </p>
+
+        <h2>Menschliche Wahrnehmung</h2>
+        <p>Informationen werden nie nur über die Farbe, sondern stets auch über die Helligkeit illustriert. Die
+            verschiedenen Dimensionen, wählbar über die Radio-Buttons, sind in unterschiedlichen Farbtönen dargestellt,
+            wobei tiefe Werte stets heller sind als höhere. Bewusst wurde auf die Mischung von roten und grünen
+            Farbtönen verzichtet. Bei den Filteralgorithmen haben wir auf hohe Performance geachtet, sodass es keine
+            Verzögerungen gibt. Zoomen ist problemlos möglich, um auch sehr kleine Länder auszuwählen.</p>
+
+        <h2>Aufgaben der Datenvisualisierung</h2>
+        <h4>Daten- und Ansichtsspezifikation:</h4>
+        <ul>
+            <li> Filterung der Quelldaten</li>
+            <li>Zusammenführen von zwei Datentabellen</li>
+            <li>Sortierung, sodass kleiner Bubbles vor grösseren dargestellt werden</li>
+            <li>Visualisierung in Map und Bubble-Graph</li>
+        </ul>
+        <h4>Ansichtsmanipulation:</h4>
+        <ul>
+            <li>Wahl der Co2-Dimension über Radio-Button</li>
+            <li>Slider für Selektion des Jahres</li>
+            <li>Land über Klick in Karte wählbar</li>
+        </ul>
+        <h4>Analyseprozess und Datenherkunft:</h4>
+        <ul>
+            <li>Minimale Beschriebe</li>
+            <li>Möglichst intuitives Bedienen</li>
+            <li>Tooltip für Detailinformationen</li>
+            <li>Referenzen und Quellenangaben</li>
+            <li>Ableiten von Erkenntnissen</li>
+        </ul>
+
+        <h2>Interaktionskonzept</h2>
+        <h4>Overview-First:</h4>
+        <p>Die Weltkarte bietet einen ersten Überblick über die primäre Fragestellung zum länderspezifischen
+            CO2-Ausstoss pro BIP.</p>
+        <h4>Zoom and filter:</h4>
+        <p>Über die Radio-Buttons kann die CO2-Dimension umgeschaltet werden. Das Jahr ist über Slider selektierbar.
+            Beides bewirkt eine Neufärbung der Karte.</p>
+        <h4>Details on Demand:</h4>
+        <p>Auf der Karte werden durch Hover detaillierte Werte im Tooltip aufgeführt. Durch Klick in der Karte werden
+            einzelne Länder im Bubble-Graph für weiterführende Analysen und Vergleiche visualisiert.</p>
+    </article>
+    <br>
+    <br>
+    <br>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</body>
+
+<div class="footer">
+    <div id="footerPlaceholder"></div>
+</div>
+
+</html>

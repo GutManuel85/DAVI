@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>CO2-Visualization</title>
+    <link rel="stylesheet" type="text/css" href="css/w3.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/slider.css">
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/loadNavBar.js"></script>
+    <script type="text/javascript" src="./js/loadFooter.js"></script>
+</head>
+
+<body class="background">
+
+<header class="w3-padding-large w3-col s12">
+    <div id="navPlaceholder"></div>
+</header>
+
+<section id="viz_white" class="w3-padding-large w3-auto w3-white">
+    <article class="w3-padding-small">
+
+
+        <!-- Load d3.js -->
+        <script src="lib/d3.v4.js"></script>
+        <script src="lib/d3-v4-slider.js"></script>
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+        <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+        <div>
+            <!-- radio button cause -->
+            <div style="float: left; width: 40%; padding-top: 10px">
+                <h3>
+                    Einfärbung der Karte
+                </h3>
+                <p>
+                    <input type="radio" id="gdp" name="radio" value="gdp" checked="true">
+                    <label for="gdp">CO2 pro BIP</label>
+                </p>
+                <p>
+                    <input type="radio" id="land" name="radio" value="land">
+                    <label for="land">CO2 pro Landfläche</label>
+                </p>
+                <p>
+                    <input type="radio" id="capita" name="radio" value="capita">
+                    <label for="capita">CO2 pro Einwohner</label>
+                </p>
+                <p>
+                    <input type="radio" id="absolut" name="radio" value="absolute">
+                    <label for="absolut">CO2 absolut</label>
+                </p>
+                <p style="margin-bottom: 30px">
+                    <input type="radio" id="relative" name="radio" value="relative">
+                    <label for="relative">CO2 relativ zum Weltausstoss</label>
+                </p>
+            </div>
+            <div style="padding-top: 10px; margin-bottom: 30px">
+                <h3>
+                    Ausgewählte Länder für Graphen
+                </h3>
+                <p>Auswahl mittels Klick auf Länder in der Karte oder über vordefinierte Ländergruppen</p>
+                <div id="countryContainer"
+                     style="overflow-y: scroll; height:100px; width:auto; background-color:#F0F0F0; padding: 10px"></div>
+                <br>
+                <button id="g7Button" type="button">G7</button>
+                <button id="g20Button" type="button">G20</button>
+                <button id="opecButton" type="button">OPEC</button>
+                <button id="clearButton" type="button" style="float: right;">Auswahl löschen</button>
+                <br>
+            </div>
+        </div>
+
+        <h3 id="map_title"></h3>
+
+        <div id="world_map" >
+            <!-- Create the world map svg -->
+            <svg id="svg_map" width="820" height="430"></svg>
+            <svg id="svg_map_legend" width=250 height=300></svg>
+        </div>
+
+        <!-- Create the slider svg -->
+        <svg id="svg_slider" width="850" height="100"></svg>
+
+        <h3 id="bubble_title">Multivariater Bubble-Graph</h3>
+
+        <div id="bubble_plot_with_legend">
+            <div id="bubble_plot">
+
+            </div>
+            <div id="bubble_plot_legend">
+                <div id="bubble_plot_legend_sizes">
+                    <svg id="svg_bubble_legend_sizes" width=300 height=200></svg>
+                </div>
+                <div id="bubble_plot_legend_colors">
+                    <svg id="svg_bubble_legend_colors" width=300 height=300></svg>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+
+
+        <!-- Load world map script -->
+        <script src="js/visualization.js"></script>
+
+        <br><br>
+
+    </article>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<footer class="footer">
+    <div id="footerPlaceholder"></div>
+</footer>
+</body>
+</html>
